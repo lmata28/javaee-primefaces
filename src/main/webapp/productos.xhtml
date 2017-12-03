@@ -22,6 +22,7 @@
                 <p:column>
                     <p:panel>
                         <h:panelGrid columns="1" style="width:100%">
+                            <p:graphicImage  value="#{prod.url}" width="200px" /> 
                             <h:outputText value="#{prod.nombre}" class="titulo" />
                             <h:outputText value="#{prod.descripcion}" />
                         </h:panelGrid>
@@ -41,7 +42,9 @@
 
                 <p:outputPanel id="productoDetalle" layout="block">
                     <h:panelGrid columns="2" cellpadding="5">
-
+                        <p:graphicImage  value="#{productoBean.productoSeleccionado.url}" width="200px" /> 
+                        
+                        <br/>
                         <h:outputLabel for="txtNombre" value="Nombre: " />
                         <h:outputText id="txtNombre"
                                       value="#{productoBean.productoSeleccionado.nombre}" />

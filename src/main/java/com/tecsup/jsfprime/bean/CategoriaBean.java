@@ -17,6 +17,7 @@ public class CategoriaBean {
     public CategoriaBean() {
         GestionProducto gestion = new GestionProducto();
         this.categorias = gestion.listar();
+        this.productos = gestion.listarPorCategoria(1l);
         
         System.out.println("TOTAL CATEGORIA  " + this.categorias.size());
     }

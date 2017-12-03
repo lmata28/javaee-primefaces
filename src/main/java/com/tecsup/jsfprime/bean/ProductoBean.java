@@ -20,7 +20,7 @@ public class ProductoBean {
 
     public ProductoBean() {
         GestionProducto gestion = new GestionProducto();
-        this.productos = gestion.listarPorCategoria(1l);
+        this.productos = gestion.listarPorCategoria(0l);
     }
     
     public List<Producto> getProductos() {

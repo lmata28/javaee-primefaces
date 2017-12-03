@@ -20,15 +20,15 @@ public class GestionProducto {
     public List<Producto> listarPorCategoria(Long id) {
 
         List<Producto> productos = new ArrayList();
-        productos.add(new Producto(1l, "Viajes de Guilliver", "Intersante"));
-        productos.add(new Producto(2l, "La isla del tesoro", "Aventuras"));
-        productos.add(new Producto(3l, "Las aventuras de Tom Sawyer", "Divertido"));
-        productos.add(new Producto(4l, "TV LG 3D SMART XYZ ", "WOW"));
-        productos.add(new Producto(5l, "PlayStation 4", "Diversión a toda hora"));
-        productos.add(new Producto(6l, "HomeTheater", "Mejor sonido."));
-        productos.add(new Producto(7l, "Set Dinosaurios JW", "WOW"));
-        productos.add(new Producto(8l, "Iron Man", "El personaje favorito"));
-        productos.add(new Producto(9l, "Monster Girl", "Muñecas para niñas de hoy."));
+        productos.add(new Producto(1l, "Viajes de Guilliver", "Intersante", "http://goo.gl/ZfzzmP"));
+        productos.add(new Producto(2l, "La isla del tesoro", "Aventuras", "http://goo.gl/ZfzzmP"));
+        productos.add(new Producto(3l, "Las aventuras de Tom Sawyer", "Divertido", "http://goo.gl/ZfzzmP"));
+        productos.add(new Producto(4l, "TV LG 3D SMART XYZ ", "WOW", "http://bit.ly/1KJxmwF"));
+        productos.add(new Producto(5l, "PlayStation 4", "Diversión a toda hora", "http://bit.ly/1KJxmwF"));
+        productos.add(new Producto(6l, "HomeTheater", "Mejor sonido.", "http://bit.ly/1KJxmwF"));
+        productos.add(new Producto(7l, "Set Dinosaurios JW", "WOW", "http://bit.ly/1KJxmwF"));
+        productos.add(new Producto(8l, "Iron Man", "El personaje favorito", "http://bit.ly/1KJxmwF"));
+        productos.add(new Producto(9l, "Monster Girl", "Muñecas para niñas de hoy.","http://bit.ly/1KJxmwF"));
 
         List<Producto> respuesta = new ArrayList();
         switch (id.intValue()) {
