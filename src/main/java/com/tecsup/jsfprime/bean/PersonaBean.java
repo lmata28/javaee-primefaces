@@ -16,12 +16,12 @@ public class PersonaBean {
     private Persona personaSeleccionada;
 
     public PersonaBean() {
-        Persona juan = new Persona("Juan", "Carlos", "1020");
-        Persona jorge = new Persona("Jorge", "Izuski", "1560");
-        Persona felipe = new Persona("Felipe", "Gruña", "14350");
-        Persona luiza = new Persona("Luiza", "Marcos", "10234");
-        Persona carmen = new Persona("Carmen", "CC", "1340");
-        Persona helena = new Persona("Helena", "Vilma", "1030");
+        Persona juan = new Persona(1l,"Juan", "Carlos", "1020");
+        Persona jorge = new Persona(2l,"Jorge", "Izuski", "1560");
+        Persona felipe = new Persona(3l,"Felipe", "Gruña", "14350");
+        Persona luiza = new Persona(4l,"Luiza", "Marcos", "10234");
+        Persona carmen = new Persona(5l,"Carmen", "CC", "1340");
+        Persona helena = new Persona(6l,"Helena", "Vilma", "1030");
 
         personas = Arrays.asList(juan, jorge, felipe, luiza, carmen, helena);
     }

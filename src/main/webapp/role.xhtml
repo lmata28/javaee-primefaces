@@ -1,0 +1,71 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3c.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:c="http://java.sun.com/jsp/jstl/core">  
+
+    <h:head> 
+        <title> Roles de Personas</title>
+        <style>
+            .titulo{
+                color: #ff8a00; 
+                font-weight: bold;
+            }
+
+            .full{
+                width: 100%;
+            }
+        </style>
+    </h:head> 
+    <h:body> 
+        <h3>Roles de Personas</h3>   
+
+        <h:form id="form"> 
+            <c:forEach items="#{roleBean.roles}" var="rol">     
+                <p:commandButton value="#{rol.descripcion}" 
+                                 actionListener="${roleBean.cargarPersonas(rol.id)}" 
+                                 update=":form:dgRoles" /> 
+            </c:forEach>
+
+            <p:dataGrid id="dgRoles"  value="#{roleBean.personas}" var="persona"> 
+                <p:column> 
+                    <p:panel> 
+                        <h:panelGrid columns="1" class="full"> 
+                            <h:outputText value="#{persona.nombres}" class="titulo" />   
+
+                            <h:outputText  value="#{persona.apellidos}" /> 
+                            
+                            <p:commandLink update=":form:personaDetalle"
+                                           oncomplete="PF('personaDialog').show()">
+                                <h:outputText value="Detalles" />
+                                <f:setPropertyActionListener 
+                                    target="#{roleBean.personaSeleccionada}" value="#{persona}"  />
+                            </p:commandLink>                        </h:panelGrid>
+
+                    </p:panel> 
+                </p:column> 
+            </p:dataGrid>
+
+            <p:dialog widgetVar="personaDialog" header="Detalle del Persona"
+                      modal="true">
+
+                <p:outputPanel id="personaDetalle" layout="block">
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputLabel for="txtNombre" value="Nombre: " />
+                        <h:outputText id="txtNombre"
+                                      value="#{roleBean.personaSeleccionada.nombres}" />
+
+                        <h:outputLabel for="txtApellidos" value="Apellido: " />
+                        <h:outputText id="txtApellidos" 
+                                      value="#{roleBean.personaSeleccionada.apellidos}" />                       
+                    </h:panelGrid>
+                </p:outputPanel>
+
+            </p:dialog>
+
+        </h:form>  
+    </h:body> 
+</html> 
